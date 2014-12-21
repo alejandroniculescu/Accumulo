@@ -1,0 +1,26 @@
+Accumulo
+========
+#No credit is taken for this guide.  Modified instructions from an opensource handbook
+
+Some friendly advice to install Accumulo once Hadoop and Zookeeper are installed (in that order)
+
+
+1. cd/usr/local
+2. sudo wget http://apache.mirrors.tds.net/accumulo/1.4.5/accumulo-1.4.5-dist.tar.gz
+**(note: the website has about 3 different accumulos i.e. 1.4.5 and 1.6.1 )
+3. sudo tar xzf accumulo-1.4.5 accumulo
+4. sudo chown -R {your username} accumulo
+**I would assume it is cloudera if you are using a quickstart // ask it: whoami if you are uncertain
+5. su - {your username}
+6. cp /usr/local/accumulo/conf/examples/512MB/standalone/* /usr/local/accumulo/conf
+7. vim /usr/local/accumulo/conf/accumulo-env.sh
+  a. You should set your JAVA_HOME, HADOOP_HOME, and ZOOKEEPER_HOME path variables
+    i. ie.
+    
+8. accumulo init
+
+** keep reference to accumulo start and stop services
+9. /user/local/accumulo/bin/start-all.sh
+
+10. check to see it works! pull up a browser.  Or firefox <url> if you feel adventerous
+http://localhost:50095
